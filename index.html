@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Media Starter Helper</title>
+  <meta name="description" content="Learn social media step-by-step with simple roadmaps, templates, and tools designed for beginners." />
+  <style>
+    :root { --border:#2a2a2a; --bg:#0b0f14; --card:#0f1620; --text:#e8eef6; --muted:#9fb0c3; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; background:var(--bg); color:var(--text); }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 16px; }
+    header { display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    h1 { margin:0; font-size: 34px; letter-spacing:-0.5px; }
+    p { color:var(--muted); line-height:1.7; }
+    .nav { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:12px; text-decoration:none; color:var(--text); background:transparent; }
+    a.btn:hover { background:rgba(255,255,255,0.05); }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin-top:22px; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .card h2 { margin:0 0 8px; font-size:18px; }
+    .small { font-size: 13px; color: var(--muted); }
+    footer { margin-top: 26px; color: var(--muted); font-size: 13px; }
+    code { background: rgba(255,255,255,0.06); padding:2px 6px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Social Media Starter Helper</h1>
+        <p>Roadmaps, templates, and simple tools to help beginners grow consistently—without overwhelm.</p>
+      </div>
+      <nav class="nav">
+        <a class="btn" href="start-here.html">Start Here</a>
+        <a class="btn" href="templates.html">Templates</a>
+        <a class="btn" href="tools.html">Tools</a>
+        <a class="btn" href="glossary.html">Glossary</a>
+      </nav>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Start Here (10 minutes)</h2>
+        <p>Pick a platform, goal, and niche—then follow a simple weekly routine.</p>
+        <a class="btn" href="start-here.html">Open</a>
+      </div>
+
+      <div class="card">
+        <h2>Templates Library</h2>
+        <p>Bio, captions, hooks, and checklists you can copy and adapt.</p>
+        <a class="btn" href="templates.html">Open</a>
+      </div>
+
+      <div class="card">
+        <h2>Tools</h2>
+        <p>Generate a 7-day plan and content ideas based on your niche and goal.</p>
+        <a class="btn" href="tools.html">Open</a>
+      </div>
+
+      <div class="card">
+        <h2>Glossary</h2>
+        <p>Simple explanations for key terms like reach, engagement, and CTR.</p>
+        <a class="btn" href="glossary.html">Open</a>
+      </div>
+    </section>
+
+    <footer>
+      <div>Tip: Start simple. Post <code>3 times/week</code> and improve one thing at a time.</div>
+    </footer>
+  </div>
+</body>
+</html>
