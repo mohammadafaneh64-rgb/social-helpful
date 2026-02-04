@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tools - Social Media Starter Helper</title>
+  <style>
+    body{font-family:system-ui; margin:0; background:#0b0f14; color:#e8eef6;}
+    .wrap{max-width:900px; margin:0 auto; padding:40px 16px;}
+    a{color:#9fd0ff; text-decoration:none}
+    .card{border:1px solid #2a2a2a; border-radius:14px; padding:16px; background:#0f1620; margin:14px 0;}
+    input, select{width:100%; padding:10px; border-radius:10px; border:1px solid #2a2a2a; background:#0b0f14; color:#e8eef6;}
+    button{padding:10px 14px; border-radius:12px; border:1px solid #2a2a2a; background:transparent; color:#e8eef6; cursor:pointer}
+    button:hover{background:rgba(255,255,255,0.05)}
+    .grid{display:grid; gap:10px; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));}
+    pre{white-space:pre-wrap; background:rgba(255,255,255,0.06); padding:12px; border-radius:12px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a href="index.html">← Back to Home</a></p>
+    <h1>Tools</h1>
+    <p>Generate a simple 7-day plan based on your niche and goal.</p>
+
+    <div class="card grid">
+      <div>
+        <label>Niche</label>
+        <input id="niche" placeholder="e.g., Fitness, Food, Real Estate" />
+      </div>
+      <div>
+        <label>Platform</label>
+        <select id="platform">
+          <option>Instagram</option>
+          <option>TikTok</option>
+          <option>YouTube</option>
+          <option>LinkedIn</option>
+        </select>
+      </div>
+      <div>
+        <label>Goal</label>
+        <select id="goal">
+          <option>Grow audience</option>
+          <option>Build trust</option>
+          <option>Get clients</option>
+          <option>Sell a product</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card">
+      <button onclick="generate()">Generate 7-Day Plan</button>
+      <button onclick="copyPlan()">Copy</button>
+      <pre id="output" style="margin-top:12px;">Your plan will appear here.</pre>
+    </div>
+  </div>
+
+  <script>
+    function generate() {
+      const niche = document.getElementById('niche').value.trim() || "your niche";
+      const platform = document.getElementById('platform').value;
+      const goal = document.getElementById('goal').value;
+
+      const days = [
+        `Day 1: Introduce yourself + who you help (${niche})`,
+        `Day 2: A beginner mistake in ${niche} + how to fix it`,
+        `Day 3: 3 quick tips for ${niche} beginners`,
+        `Day 4: A simple story: your struggle or a client story`,
+        `Day 5: A checklist: "Before you post on ${platform}"`,
+        `Day 6: Myth vs Fact in ${niche}`,
+        `Day 7: Ask a question + invite comments (engagement)`
+      ];
+
+      const text =
+`7-Day Plan
+Platform: ${platform}
+Goal: ${goal}
+Niche: ${niche}
+
+${days.join('\n')}
+
+CTA idea: "Save this" + "Follow for more ${niche} tips".`;
+
+      document.getElementById('output').textContent = text;
+    }
+
+    function copyPlan() {
+      const text = document.getElementById('output').textContent;
+      navigator.clipboard.writeText(text);
+    }
+  </script>
+</body>
+</html>
